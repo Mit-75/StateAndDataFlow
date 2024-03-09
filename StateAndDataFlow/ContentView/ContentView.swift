@@ -9,10 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject private var contentViewVM: ContentViewViewModel
+    @EnvironmentObject private var loginViewVM: LoginViewViewModel
     
     var body: some View {
         
         VStack {
+            Text("Hi, \(loginViewVM.name)!")
+                .padding(.top, 100)
+                .font(.largeTitle)
             Text(contentViewVM.counter.formatted())
                 .font(.largeTitle)
                 .padding(.top, 90)
@@ -31,6 +35,7 @@ struct ContentView: View {
 #Preview {
     ContentView()
         .environmentObject(ContentViewViewModel())
+        .environmentObject(LoginViewViewModel())
 }
 
 
