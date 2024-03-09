@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct StateAndDataFlowApp: App {
+    @StateObject private var contentViewVM = ContentViewViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
+        .environmentObject(contentViewVM)
     }
 }
